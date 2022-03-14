@@ -39,13 +39,21 @@ class JobController extends Controller
     {
 
         $pageTitle = "Post Job";
-        return view('job/createJob', compact('pageTitle'));
+        return view('job.createJob', compact('pageTitle'));
     }
 
     //insert Job into db table
     public function storeJob(Request $request)
     {
-        
+        //'email' => 'required|unique:cars', - where cars is the table name
+
+        $request->validate([
+            
+            'jobTitle' => 'required',
+            'jobDescripton' => 'required',
+            'jobClosingDate' => 'required'
+        ]);
+
         $jobPost = new JobPost();
         $jobPost->title = $request->input('jobTitle'); 
         $jobPost->recruiter_id = rand(1,100);
