@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Models\JobPost;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,19 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::get('/todos',[TodoController::class,'index']);
-Route::delete('/todos/delete/{id}',[TodoController::class,'delete']);
-Route::post('/todos',[TodoController::class,'store']);
+Route::get('/jobs',function(){
+	$jobs = JobPost::all();
+	return response()->json($jobs, 200) ;
+});
+
+Route::get('/jobs/{id}',function($id){
+	$jobDetails = JobPost::where("id","=",$id)->get(); 
+	return response()->json($jobDetails, 200) ;
+	//return response(JobPost::find($id), 200);
+	
+	
+});
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -22,10 +22,13 @@ class JobPostFactory extends Factory
     public function definition()
     {
         return [
-            'recruiter_id' =>  rand(1,100),
+            'recruiting_company' => $this->faker->paragraph(),
             'title' => $this->faker->paragraph(),
+            'recruiter_id' =>  rand(1,100),
             'description' => $this->faker->sentence(),
             'closing_date' => now(),
+            'application_method' => $this->faker->paragraph(),
+            'email_website' => $this->faker->email(),
             
         ];
     }

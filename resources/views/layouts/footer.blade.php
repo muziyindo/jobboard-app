@@ -1,6 +1,6 @@
 
-    <div class="container-footer">
+    <footer class="style:margin-top:50px">
         <p>
-            copyright @ 2022
+            <center>Copyright @ 2022</center>
         </p>
-    </div>
+    </footer>

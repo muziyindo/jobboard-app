@@ -13,7 +13,7 @@ class JobController extends Controller
     function index(){
 
         $pageTitle = "Ideal Job Board";
-        return view('job/index',compact('pageTitle'));
+        return view('job.index',compact('pageTitle'));
     }
 
     function about(){
@@ -31,7 +31,7 @@ class JobController extends Controller
     function login(){
 
         $pageTitle = "Login";
-        return view('job/login',compact('pageTitle'));
+        return view('job.login',compact('pageTitle'));
     }
 
     //display the job creation form
@@ -49,16 +49,22 @@ class JobController extends Controller
 
         $request->validate([
             
+            'recruitingCompany' => 'required',
             'jobTitle' => 'required',
-            'jobDescripton' => 'required',
-            'jobClosingDate' => 'required'
+            'jobDescription' => 'required',
+            'jobClosingDate' => 'required',
+            'applicationMethod' => 'required',
+            'emailWebsite' => 'required'
         ]);
 
         $jobPost = new JobPost();
+        $jobPost->recruiting_company = $request->input('recruitingCompany'); 
         $jobPost->title = $request->input('jobTitle'); 
         $jobPost->recruiter_id = rand(1,100);
         $jobPost->description = $request->input('jobDescription'); 
         $jobPost->closing_date = $request->input('jobClosingDate'); 
+        $jobPost->application_method = $request->input('applicationMethod'); 
+        $jobPost->email_Website = $request->input('emailWebsite'); 
         $jobPost->save();
         
 
@@ -72,7 +78,7 @@ class JobController extends Controller
         ]);
         */
 
-        return redirect('/job/jobs');
+        return redirect('/job/jobs')->with('message','Job Successfully Added');;
     }
 
     function jobs(){
@@ -87,7 +93,7 @@ class JobController extends Controller
 
 
             $pageTitle = "Available Jobs";
-            return view('job/jobs',compact('jobs','pageTitle'));
+            return view('job.jobs',compact('jobs','pageTitle'));
     }
 
     function jobDetails($id){

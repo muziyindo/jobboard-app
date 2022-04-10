@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.btn-custom {
+    border-radius: 0;
+    width: 70px;
+    height: 70px;
+    padding:10px;
+    margin: 10px 0;
+    background-color: #f50057;
+    border: 0;
+    color: #fff;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+    border-radius: 100%;
+}
+
+.top-nav {
+    height: 20px;
+    background-color: #482880;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.header-container {
+    padding:0;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.login-box{
+    padding: 20px;
+    width:40%;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+
+}
+.login-box-top{
+    margin-top:50px;
+    height:10px;
+    width: 40%;
+    background-color: #482880;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+.login-title{
+     margin-top:50px; 
+    width: 40%;
+    background-color: #ddd;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+    color:#482880;
+    padding: 5px;
+}
+
+.job-list-title{
+    margin-top:50px; 
+   width: 100%;
+   background-color: #ddd;
+   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+   color:#482880;
+   padding: 2px;
+}
+

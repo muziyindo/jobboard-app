@@ -15,10 +15,13 @@ class CreateJobPostsTable extends Migration
     {
         Schema::create('job_posts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('recruiting_company',300);
             $table->string('title',300);
             $table->string('recruiter_id',10);
             $table->longText('description');
             $table->date('closing_date');
+            $table->string('application_method',300);
+            $table->string('email_website',300);
             $table->timestamps();
         });
     }
